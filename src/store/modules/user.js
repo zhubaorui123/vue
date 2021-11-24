@@ -5,6 +5,7 @@ import { getToken, setToken, removeToken } from '@/utils/auth'
 //路由模块当中重置路由的方法
 import { anyRoutes, resetRouter,asyncRoutes,constantRoutes} from '@/router';
 import router from '@/router';
+import cloneDeep from 'lodash/cloneDeep'
 
 //箭头函数
 const getDefaultState = () => {
@@ -108,7 +109,7 @@ const actions = {
         const { data } = response;
         //vuex存储用户全部的信息
         commit('SET_USERINFO',data);
-        commit('SET_RESULTASYNCROUTES',computedAsyncRoutes(asyncRoutes,data.routes));
+        commit('SET_RESULTASYNCROUTES',computedAsyncRoutes(cloneDeep(asyncRoutes),data.routes));
         resolve(data)
       }).catch(error => {
         reject(error)
