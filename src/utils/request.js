@@ -68,7 +68,7 @@ service.interceptors.response.use(
       }
       return Promise.reject(new Error(res.message || 'Error'))
     } else {
-    //服务器相应成功干什么
+    //服务器响应成功干什么
       return res
     }
   },
