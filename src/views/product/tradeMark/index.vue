@@ -152,7 +152,7 @@ export default {
       //表单验证规则
       rules: {
         //品牌名称的验证规则
-        //require:必须要校验字段（前面五角星有关系）  message 提示信息    trigger:用户行为设置（事件的设置:blur、change）
+        //require:必须要校验字段（前面五角星有关系）  message 提示信息    trigger:用户行为设置（事件的设置:blur(失去焦点)、change（修改内容））
         tmName: [
           { required: true, message: "请输入品牌名称", trigger: "blur" },
           //自定义校验规则
